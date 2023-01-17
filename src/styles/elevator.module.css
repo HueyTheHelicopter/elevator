@@ -1,0 +1,13 @@
+.elevator {
+    width: 37.9%;
+    height: 37.9%;
+    transition: all 2s;
+}
+
+.up {
+    background-color: red;
+}
+
+.down {
+    background-color: blue;
+}
