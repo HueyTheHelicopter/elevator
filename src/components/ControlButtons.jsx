@@ -1,6 +1,7 @@
 import { Button, Container, Row, Col} from "react-bootstrap";
 import { useContext, useState } from "react";
-import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context.js";
+import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context/index.js";
+
 
 export const ControlButtons = () => {
 
@@ -27,7 +28,7 @@ export const ControlButtons = () => {
     }
 
     return (
-        <Container className=" buttons container">
+        <Container className="buttons container">
             <Row className="buttons row">
                 <Col className="buttons col">
                     <Button onClick={() => onFloorButtonClicked(9)}>9</Button>

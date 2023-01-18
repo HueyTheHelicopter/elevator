@@ -1,13 +1,20 @@
 .elevator {
     width: 37.9%;
     height: 37.9%;
-    transition: all 2s;
+    /* object-fit:; */
+    transition: 1s;
 }
 
 .up {
-    background-color: red;
+    width: 37.9%;
+    height: 37.9%;
+    transition: 1s;
+    transform: translateY(-110px);
 }
 
 .down {
-    background-color: blue;
+    width: 37.9%;
+    height: 37.9%;
+    transform: translateY(110px);
+    transition: 1s;
 }

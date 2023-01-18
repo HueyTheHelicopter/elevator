@@ -1,15 +1,15 @@
 import { Container } from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import elevator from '../images/elevator.png'
 import { useContext, useEffect, useState } from "react";
 import style from '../styles/elevator.module.css'
-import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context.js";
+import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context/index.js";
 
 
 export const Elevator = ({props}) => {
     const {elevatorFloor, setElevatorFloor} = useContext(ElevatorContext);
-    const {desiredFloor, setDesiredFloor} = useContext(DesiredFloorContext);    
-    const {muteButtons, setMuteButtons} = useContext(MuteButtonsContext);
+    const {desiredFloor} = useContext(DesiredFloorContext);    
+    const {setMuteButtons} = useContext(MuteButtonsContext);
     const [elStyle, setElStyle] = useState(style.elevator);
 
 
@@ -23,7 +23,7 @@ export const Elevator = ({props}) => {
     const timer = (callback) => {
         return new Promise((resolve, reject) => setTimeout(() => {
             resolve(setElevatorFloor(() => callback()))
-        }, 2000))
+        }, 3500))
     }
 
     const elevatorGoDown = async () => {
@@ -45,17 +45,16 @@ export const Elevator = ({props}) => {
             return;
         } 
         else if (desiredFloor > elevatorFloor) {
-            elevatorGoUp()
-            setElStyle(elStyle + style.up)
+            setElStyle(style.up)
+            let p = elevatorGoUp()
+            console.log(p)
         }
         else if (desiredFloor < elevatorFloor) {
-            elevatorGoDown()
-            setElStyle(elStyle)
-
+            setElStyle(style.down)
+            let p = elevatorGoDown()
+            console.log(p)
         } else return; 
     }
-
-    console.log(style)
 
     useEffect(() => {
         if (elevatorFloor === desiredFloor) {

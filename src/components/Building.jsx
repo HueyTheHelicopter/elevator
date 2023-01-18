@@ -5,7 +5,7 @@ import { useState } from "react";
 export const Building = () => {
 
     const [isRender, setIsRender] = useState(false);
-    const [numberOfFlors, setNumberOfFloors] = useState(8);
+    const [numberOfFlors] = useState(8);
     const [floorsArray, setFloorsArray] = useState([]);
 
     const makeFloors = () => {

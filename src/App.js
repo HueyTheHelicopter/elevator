@@ -1,11 +1,10 @@
-import logo from './logo.svg';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
-import { Elevator } from './components/Elevator';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { Building } from './components/Building';
 import { ControlButtons } from './components/ControlButtons';
-import { useEffect, useState } from "react";
-import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from './context.js';
+import {  useState } from "react";
+import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from './context/index.js';
 
 function App() {
   const [desiredFloor, setDesiredFloor] = useState(5);
