@@ -1,4 +1,4 @@
-import { Button, Container, Row, Col, Alert, Modal} from "react-bootstrap";
+import { Button, Container, Row, Col, Alert} from "react-bootstrap";
 import { useContext, useState } from "react";
 import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context/index.js";
 

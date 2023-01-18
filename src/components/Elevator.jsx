@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-// import 'bootstrap/dist/css/bootstrap.min.css'
 import elevatorDefault from'../images/elevatorStandC.png';
 import elevatorStand from '../images/elevatorStand1C.png'
 import elevatorUp from '../images/elevatorUpC.png'
@@ -9,7 +8,7 @@ import style from '../styles/elevator.module.css'
 import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context/index.js";
 
 
-export const Elevator = ({props}) => {
+export const Elevator = () => {
     const {elevatorFloor, setElevatorFloor} = useContext(ElevatorContext);
     const {desiredFloor} = useContext(DesiredFloorContext);    
     const {setMuteButtons} = useContext(MuteButtonsContext);
@@ -31,12 +30,10 @@ export const Elevator = ({props}) => {
     }
 
     const elevatorGoDown = async () => {
-        // console.log("I'm on the "+ elevatorFloor +"'th floor, moving down to " + desiredFloor + "'th floor")
         await timer(down)
     }
 
     const elevatorGoUp = async () => {
-        // console.log("I'm on the "+ elevatorFloor +"'th floor, moving up to " + desiredFloor + "'th floor")
         await timer(up)
 
     }

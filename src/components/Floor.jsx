@@ -8,10 +8,6 @@ export const Floor = ({props}) => {
     const thisFloor = props;
     const {elevatorFloor} = useContext(ElevatorContext);
 
-    const borderColor = () => {
-        return thisFloor === elevatorFloor ? 'border-success' : 'border-secondary'
-    }
-
 
     return (
         <Container className="floor container">
@@ -20,7 +16,6 @@ export const Floor = ({props}) => {
                         <Alert variant="info" className="mt-3">
                             {thisFloor}'th floor
                         </Alert>
-                        {/* <hr/> */}
                 </Col>
                 <Col sm={4} className="floor elevator col">
                     {thisFloor === elevatorFloor ?

@@ -1,14 +1,12 @@
-import { Container, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Floor } from "./Floor";
-import { useState, useContext } from "react";
-import { ElevatorContext } from "../context";
+import { useState } from "react";
 
 export const Building = () => {
 
     const [isRender, setIsRender] = useState(false);
     const [numberOfFlors] = useState(8);
     const [floorsArray, setFloorsArray] = useState([]);
-    const {elevatorFloor} = useContext(ElevatorContext)
 
     const makeFloors = () => {
         let t_arr = [];
