@@ -17,13 +17,6 @@ function App() {
     <ElevatorContext.Provider value={{elevatorFloor, setElevatorFloor}}>
     <MuteButtonsContext.Provider value={{muteButtons, setMuteButtons}}>
       <Container fluid>
-        <Row className="my-3">
-          <Col >
-            <span className="_">
-              Elevator is on the {elevatorFloor}'th floor
-            </span>
-          </Col>
-        </Row>
         <Row className="mb-3">
           <Col sm={9}>
             <Building/>

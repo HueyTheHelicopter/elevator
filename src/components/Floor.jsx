@@ -18,6 +18,7 @@ export const Floor = ({props}) => {
             <Row className="floor row">
                 <Col sm={8} className="floor col">
                         <p>this is {thisFloor}'th floor</p>
+                        <hr/>
                 </Col>
                 <Col sm={4} className="floor elevator col">
                     {thisFloor === elevatorFloor ?
