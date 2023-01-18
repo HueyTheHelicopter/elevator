@@ -31,10 +31,6 @@ export const ControlButtons = () => {
         }
     }
 
-    const handleHideModal = () => {
-        setShowModal(false)
-    }
-
     return (
         <Container className="buttons container">
             <Row className="mb-4">
