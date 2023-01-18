@@ -27,12 +27,9 @@ export const Building = () => {
         <Container className="building p-3">
             {isRender ?
                 <Container>
-                    <Col className="mb-4">
-                        <span className="_">
-                            Elevator is on the {elevatorFloor}'th floor
-                        </span>
-                    </Col>
+                    <br/>
                     {floorsArray.map(fl => { return fl})}
+                    <br/>
                 </Container>
             :null }
         </Container>

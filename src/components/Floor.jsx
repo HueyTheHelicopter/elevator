@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col, Container, Alert } from "react-bootstrap"
 import { ElevatorContext } from "../context/index.js";
 import { Elevator } from "./Elevator.jsx";
 
@@ -17,8 +17,10 @@ export const Floor = ({props}) => {
         <Container className="floor container">
             <Row className="floor row">
                 <Col sm={8} className="floor col">
-                        <p>this is {thisFloor}'th floor</p>
-                        <hr/>
+                        <Alert variant="info" className="mt-3">
+                            {thisFloor}'th floor
+                        </Alert>
+                        {/* <hr/> */}
                 </Col>
                 <Col sm={4} className="floor elevator col">
                     {thisFloor === elevatorFloor ?

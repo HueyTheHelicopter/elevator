@@ -1,9 +1,9 @@
 import { Container } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.min.css'
-import elevatorDefault from'../images/elevatorStand.png';
-import elevatorStand from '../images/elevatorStand1.png'
-import elevatorUp from '../images/elevatorUp.png'
-import elevatorDown from '../images/elevatorDown.png'
+import elevatorDefault from'../images/elevatorStandC.png';
+import elevatorStand from '../images/elevatorStand1C.png'
+import elevatorUp from '../images/elevatorUpC.png'
+import elevatorDown from '../images/elevatorDownC.png'
 import { useContext, useEffect, useState } from "react";
 import style from '../styles/elevator.module.css'
 import { ElevatorContext, DesiredFloorContext, MuteButtonsContext } from "../context/index.js";
@@ -53,10 +53,10 @@ export const Elevator = ({props}) => {
                 break;
             case('stay'):
                 setTimeout(() => {
-                    console.log('stay')
                     setElStyle(style.elevator)
                     setElImg(elevatorStand)
                 }, 1000)
+                break;
             default:
                 break;
         }
@@ -71,13 +71,11 @@ export const Elevator = ({props}) => {
         } 
         else if (desiredFloor > elevatorFloor) {
             changeElevatorVisual('up')
-            let p = elevatorGoUp()
-            console.log(p)
+            elevatorGoUp()
         }
         else if (desiredFloor < elevatorFloor) {
             changeElevatorVisual('down')
-            let p = elevatorGoDown()
-            console.log(p)
+            elevatorGoDown()
         } else return; 
     }
 

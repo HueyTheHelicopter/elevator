@@ -17,11 +17,11 @@ function App() {
     <ElevatorContext.Provider value={{elevatorFloor, setElevatorFloor}}>
     <MuteButtonsContext.Provider value={{muteButtons, setMuteButtons}}>
       <Container fluid>
-        <Row className="mb-3">
+        <Row className="my-3">
           <Col sm={9}>
             <Building/>
           </Col>
-          <Col sm={3}>
+          <Col sm={3} className="my-auto">
             <ControlButtons/>
           </Col>
         </Row>

@@ -37,33 +37,45 @@
 }
 
 .building {
-  border: 3px solid #ae5608;
-}
-
-.building {
+  background-image: url('./images/buildingWall.png');
   width:fit-content;
+  border-bottom: 10px solid #2d1c09;
+  background-size: 15%;
+  box-shadow: 13px -10px 10px black;
 }
 
 .floor {
+  background-color: #282c34;
   height: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 3px solid #371a03;
 }
 
 .floor.col {
+  font-family: "Arial Black", Times, serif;
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 7px solid #2b1503;
+  border-left: 3px solid #391205;
+  border-top: 3px solid #391205;
+  border-right: 3px solid #391205;
   height: 100%;
-  width: 70%;
+  width: 75%;
   align-items: center;
   justify-content: center;
 }
 
 .floor.elevator.col {
-  border-bottom:1px dashed white;
-  width: 30%;
+  background-image: url('./images/brickwall1.png');
+  background-size: 30%;
+  /* border-bottom:1px dashed white; */
+  width: 25%;
 }
 
 .elevator.container {
-  width: 100%;
+  margin-top: 3px;
+  width: 40%;
   height: 100%;
+}
+
+.modal {
+  border-bottom: 1px solid red;
 }

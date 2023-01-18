@@ -1,20 +1,16 @@
 .elevator {
-    /* width: 100%; */
-    height: 100%;
-    /* object-fit:; */
+    height: 95%;
     transition: 1s;
 }
 
 .up {
-    /* width: 37.9%; */
-    height: 100%;
+    height: 95%;
     transition: 1s;
-    transform: translateY(-110px);
+    transform: translateY(-100px);
 }
 
 .down {
-    /* width: 37.9%; */
-    height: 100%;
-    transform: translateY(110px);
+    height: 95%;
+    transform: translateY(100px);
     transition: 1s;
 }
