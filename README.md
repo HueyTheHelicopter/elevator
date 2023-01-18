@@ -1,7 +1,10 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Requirements to run and successfully compile project:
+Node.js, React Bootstrap [`npm install react-bootstrap`]
+### Easy start: 
+1. open terminal and go to the directory where you want to place the project,
+2. run `npx create-react-app 'new-app-name'` (*without quotes*),
+3. don't forget for `npm install react-bootstrap`,
+4. *src* folder from this repo replace with *src* folder in newly created project.
 ## Available Scripts
 
 In the project directory, you can run:
@@ -29,42 +32,22 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Description of Project components:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+***./src/App.js*** -- main application file that renders all others and provides contexts to them.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+***/src/App.css*** -- holds most of the styles used in this project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+***./src/context/index.js*** -- holds contexts such as `desiredFloorContext, ElevatorFloorContext, MuteButtonsContext`. Contexts allow different components to listen them, without providing properties explicitly.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+***.src/images/*** -- contain images of valls and elevator.
 
-## Learn More
+***.src/styles/*** -- contain css style for elevator component.
+### Components
+***./src/components/ControlButtons.jsx*** -- constantly renders alert component with information about elevator's current floor; renders buttons along with providing their functionality. When button is pressed and elevator is not moving, at this moment `desiredFloorContext` will be changed to the choosed one and elevator start moving. If button pressed while elevator is moving, the modal alert component will showup telling that buttons are muted while elevator is moving. Whether the elevator is on the move determines on the `MuteButtonContext` state.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+***.src/components/Building.jsx*** -- renders building container that holds floor containers. `makeFloor` function iteratively returns Floor components. Iteration begins "from" `numberOfFloors` "to" `0`. It allows to receive array of floors from last to first and render them in that order, highest floor on the top of the page, first floor on the bottom. Returned componend pushes to `arrayFloors` array. When iteration ends `setIsRender` function receives boolean `true` and whole building renders by mapping over `arrayFloors`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+***./src/components/Floor.jsx*** -- recieves number in props that corresponds to floor container that will be rendered. Floor container also have container for Elevator component which is rendered if `ElevatorFloorContext` is equal to `thisFloor` value, that means that elevator is on that floor now ind have to be rendered.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+***./src/components/Elevator*** -- by using useEffect React hook, this component always listens to `desiredFloor` variable of `DesiredFloorContext`. As `desiredFloor` changes and it is not equal to `elevatorFloor`, `setMuteButtons` function sets to `false`, next function `moveElevator` fires. It determines in which direction elevator should move and passes the corrsponding class with animation ('up' or 'down') from ./src/styles/elevator.module.css to Elevator component, next fires one of the asynchronous functions (`elevatorGoUp` or `elevatorGoDown`), both of these calls for `timer` function providing the callback function to it. Function `time` receives callback function executes it after 3.5 seconds. Callback function simply returns decreased or increased (by 1) value of `elevatorFloor` variable. Once `elevatorFloor` is equal to `desiredFloor`, `useEffect` changes style of elevator to default and `muteButtons` to `false`.
