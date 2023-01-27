@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Elevator_to_deploy/static/css/main.4a948d18.css",
+    "main.js": "/Elevator_to_deploy/static/js/main.f545f2b5.js",
+    "static/js/787.f05f7f12.chunk.js": "/Elevator_to_deploy/static/js/787.f05f7f12.chunk.js",
+    "static/media/elevatorStand1C.png": "/Elevator_to_deploy/static/media/elevatorStand1C.8671cac6e89e5f6d3b3d.png",
+    "static/media/buildingWall.png": "/Elevator_to_deploy/static/media/buildingWall.02b473fe209fbd5e1052.png",
+    "static/media/brickwall1.png": "/Elevator_to_deploy/static/media/brickwall1.95f374589b05fc16cdf7.png",
+    "static/media/elevatorStandC.png": "/Elevator_to_deploy/static/media/elevatorStandC.f62f117834bffc96b21a.png",
+    "static/media/elevatorUpC.png": "/Elevator_to_deploy/static/media/elevatorUpC.cf3dfcbfff3decb1ad85.png",
+    "index.html": "/Elevator_to_deploy/index.html",
+    "main.4a948d18.css.map": "/Elevator_to_deploy/static/css/main.4a948d18.css.map",
+    "main.f545f2b5.js.map": "/Elevator_to_deploy/static/js/main.f545f2b5.js.map",
+    "787.f05f7f12.chunk.js.map": "/Elevator_to_deploy/static/js/787.f05f7f12.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a948d18.css",
+    "static/js/main.f545f2b5.js"
+  ]
+}
